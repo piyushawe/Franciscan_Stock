@@ -17,7 +17,7 @@ import org.openqa.selenium.support.ui.Select;
 
 public class Utility {
 
-	void captureScreenshot(WebDriver dr, String str, String r, Collection<String> sc) throws IOException
+	public void captureScreenshot(WebDriver dr, String str, String r, Collection<String> sc) throws IOException
 	{
 		String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
 		File f= ((TakesScreenshot)dr).getScreenshotAs(OutputType.FILE);

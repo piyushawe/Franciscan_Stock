@@ -12,7 +12,17 @@ import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-
+import globalMastersPageObject.DefineAcademicYear;
+import globalMastersPageObject.DefineBrandName;
+import globalMastersPageObject.DefineFinancialYear;
+import globalMastersPageObject.DefineItemCategory;
+import globalMastersPageObject.DefineItems;
+import globalMastersPageObject.DefineItemsSubCategory;
+import globalMastersPageObject.DefineSmsTemplate;
+import globalMastersPageObject.DefineUnit;
+import masterSettingsPageObject.DefineItemUniqueEntity;
+import masterSettingsPageObject.NotificationScheduler;
+import masterSettingsPageObject.StockMasterSetting;
 import pageObjects.ActiveStockReport;
 import pageObjects.ChallanReport;
 import pageObjects.CumulativeStockStatementValueWise;
@@ -30,22 +40,31 @@ import pageObjects.StockLedger;
 import pageObjects.StockOpeningReport;
 import pageObjects.StockPurchaseOrderReport;
 import pageObjects.Utility;
+import stockPageObject.AssetOpeningEntry;
+import stockPageObject.MultipleStockIssue;
+import stockPageObject.OpeningQuantity;
+import stockPageObject.PurchaseOrder;
+import stockPageObject.PurchaseReturnEntry;
+import stockPageObject.RequisitionOrder;
+import stockPageObject.StockBillEntry;
+import stockPageObject.StockInEntry;
+import stockPageObject.StockIssue;
+import stockPageObject.StockReturn;
+import stockPageObject.StockReturnItemWise;
 
 public class MyStepDef {
   WebDriver dr;
   Collection<String> tagname;
   String schoolname;
   Collection<String> scenario;
-//
+
   @Before
   public void launchBrowser(Scenario sc)
   {
 	  System.setProperty("webdriver.chrome.driver", "D:\\selenium\\chrome\\chromedriver.exe");
 	  dr= new ChromeDriver();
 	  dr.manage().window().maximize();
-	  //System.out.println(s.getId());
-	  scenario= sc.getSourceTagNames();
-	 
+	  scenario= sc.getSourceTagNames();	 
   }
   
   @After
@@ -746,5 +765,300 @@ public class MyStepDef {
 	  r.clickShow(schoolname,scenario);
   }
 
+//notification scheduler
+  @When("^user open notification scheduler page$")
+  public void user_open_notification_scheduler_page() throws Throwable {
+	  NotificationScheduler ns= new NotificationScheduler(dr);
+	  ns.openNotificationScheduler();
+  }
 
+  @Then("^verify notification scheduler page$")
+  public void verify_notification_scheduler_page() throws Throwable {
+	  NotificationScheduler ns= new NotificationScheduler(dr);
+	  ns.verifyPage(schoolname, scenario);
+  }
+  
+//define item unique entity
+  @When("^user open define item unique entity page$")
+  public void user_open_define_item_unique_entity_page() throws Throwable {
+	  DefineItemUniqueEntity diue= new DefineItemUniqueEntity(dr);
+	  diue.openDefineItemUniqueEntity();
+  }
+
+  @Then("^verify define item unique entity page$")
+  public void verify_define_item_unique_entity_page() throws Throwable {
+	  DefineItemUniqueEntity diue= new DefineItemUniqueEntity(dr);
+	  diue.verifyPage(schoolname, scenario);
+  }
+
+//stock master setting
+  @When("^user open stock master setting page$")
+  public void user_open_stock_master_setting_page() throws Throwable {
+	  StockMasterSetting sms= new StockMasterSetting(dr);
+	  sms.openStockMasterSetting();
+  }
+
+  @Then("^verify stock master setting page$")
+  public void verify_stock_master_setting_page() throws Throwable {
+	  StockMasterSetting sms= new StockMasterSetting(dr);
+	  sms.verifyPage(schoolname, scenario);
+  }
+
+//define item category
+  @When("^user open define item category page$")
+  public void user_open_define_item_category_page() throws Throwable {
+	  DefineItemCategory dic= new DefineItemCategory(dr);
+	  dic.openDefineItemCategory();
+  }
+
+  @Then("^verify define item category page$")
+  public void verify_define_item_category_page() throws Throwable {
+	  DefineItemCategory dic= new DefineItemCategory(dr);
+	  dic.verifyPage(schoolname, scenario);
+  }
+
+//define unit
+  @When("^user open define unit page$")
+  public void user_open_define_unit_page() throws Throwable {
+	  DefineUnit du= new DefineUnit(dr); 
+	  du.openDefineUnit();
+  }
+
+  @Then("^verify define unit page$")
+  public void verify_define_unit_page() throws Throwable {
+	  DefineUnit du= new DefineUnit(dr);
+	  du.verifyPage(schoolname, scenario);
+  }
+ 
+//define items  
+  @When("^user open define items page$")
+  public void user_open_define_items_page() throws Throwable {
+	  DefineItems di= new DefineItems(dr);
+	  di.openDefineItems();
+  }
+
+  @Then("^verify define items page$")
+  public void verify_define_items_page() throws Throwable {
+	  DefineItems di= new DefineItems(dr);
+	  di.verifyPage(schoolname, scenario);
+  }
+
+//define items sub category
+  @When("^user open define items sub category page$")
+  public void user_open_define_items_sub_category_page() throws Throwable {
+	  DefineItemsSubCategory disc= new DefineItemsSubCategory(dr);
+	  disc.openDefineItemsSubCategory();
+  }
+
+  @Then("^verify define items sub category page$")
+  public void verify_define_items_sub_category_page() throws Throwable {
+	  DefineItemsSubCategory disc= new DefineItemsSubCategory(dr);
+	  disc.verifyPage(schoolname, scenario);
+  }
+  
+//define brand name
+  @When("^user open define brand name page$")
+  public void user_open_define_brand_name_page() throws Throwable {
+	  DefineBrandName dbn= new DefineBrandName(dr);
+	  dbn.openDefineBrandName();
+  }
+
+  @Then("^verify define brand name page$")
+  public void verify_define_brand_name_page() throws Throwable {
+	  DefineBrandName dbn= new DefineBrandName(dr);
+	  dbn.verifyPage(schoolname, scenario);
+  }
+  
+//define academic year
+  @When("^user open define academic year page$")
+  public void user_open_define_academic_year_page() throws Throwable {
+	  DefineAcademicYear day= new DefineAcademicYear(dr);
+	  day.openDefineAcademicYear();
+  }
+
+  @Then("^verify define academic year page$")
+  public void verify_define_academic_year_page() throws Throwable {
+	  DefineAcademicYear day= new DefineAcademicYear(dr);
+	  day.verifyPage(schoolname, scenario);
+  }
+  
+//define financial year
+  @When("^user open define financial year page$")
+  public void user_open_define_financial_year_page() throws Throwable {
+	  DefineFinancialYear dfy= new DefineFinancialYear(dr);
+	  dfy.openDefineFinancialYear();
+  }
+
+  @Then("^verify define financial year page$")
+  public void verify_define_financial_year_page() throws Throwable {
+	  DefineFinancialYear dfy= new DefineFinancialYear(dr);
+	  dfy.verifyPage(schoolname, scenario);
+  }
+
+//define sms template
+  @When("^user open define sms template page$")
+  public void user_open_define_sms_template_page() throws Throwable {
+	  DefineSmsTemplate dst= new DefineSmsTemplate(dr);
+	  dst.openDefineSmsTemplate();
+  }
+
+  @Then("^verify define sms template page$")
+  public void verify_define_sms_template_page() throws Throwable {
+	  DefineSmsTemplate dst= new DefineSmsTemplate(dr);
+	  dst.verifyPage(schoolname, scenario);
+  }
+  
+//requisition order
+  @When("^user open requisition order page$")
+  public void user_open_requisition_order_page() throws Throwable {
+	  RequisitionOrder ro= new RequisitionOrder(dr);
+	  ro.openRequisitionOrder();
+  }
+
+  @Then("^verify requisition order page$")
+  public void verify_requisition_order_page() throws Throwable {
+	  RequisitionOrder ro= new RequisitionOrder(dr);
+	  ro.verifyPage(schoolname, scenario);
+  }
+  
+//purchase order
+  @When("^user open purchase order page$")
+  public void user_open_purchase_order_page() throws Throwable {
+	  PurchaseOrder po= new PurchaseOrder(dr);
+	  po.openPurchaseOrder();
+  }
+
+  @Then("^verify purchase order page$")
+  public void verify_purchase_order_page() throws Throwable {
+	  PurchaseOrder po= new PurchaseOrder(dr);
+	  po.verifyPage(schoolname, scenario);
+  }
+
+//stock in entry
+  @When("^user open stock in entry page$")
+  public void user_open_stock_in_entry_page() throws Throwable {
+	  StockInEntry se= new StockInEntry(dr);
+	  se.openStockInEntry();
+  }
+
+  @Then("^verify stock in entry page$")
+  public void verify_stock_in_entry_page() throws Throwable {
+	  StockInEntry se= new StockInEntry(dr);
+	  se.verifyPage(schoolname, scenario);
+  }
+
+//stock bill entry
+  @When("^user open stock bill entry page$")
+  public void user_open_stock_bill_entry_page() throws Throwable {
+	  StockBillEntry sbe= new StockBillEntry(dr);
+	  sbe.openStockBillEntry();
+  }
+
+  @Then("^verify stock bill entry page$")
+  public void verify_stock_bill_entry_page() throws Throwable {
+	  StockBillEntry sbe= new StockBillEntry(dr);
+	  sbe.verifyPage(schoolname, scenario);
+  }
+  
+//purchase return entry
+  @When("^user open purchase return entry page$")
+  public void user_open_purchase_return_entry_page() throws Throwable {
+	  PurchaseReturnEntry pre= new PurchaseReturnEntry(dr);
+	  pre.openPurchaseReturnEntry();
+  }
+
+  @Then("^verify purchase return entrypage$")
+  public void verify_purchase_return_entrypage() throws Throwable {
+	  PurchaseReturnEntry pre= new PurchaseReturnEntry(dr);
+	  pre.verifyPage(schoolname, scenario);
+  }
+  
+//stock issue
+  @When("^user open stock issue page$")
+  public void user_open_stock_issue_page() throws Throwable {
+	  StockIssue si= new StockIssue(dr);
+	  si.openStockIssue();
+  }
+
+  @Then("^verify stock issue page$")
+  public void verify_stock_issue_page() throws Throwable {
+	  StockIssue si= new StockIssue(dr);
+	  si.verifyPage(schoolname, scenario);
+  }
+  
+//stock return
+  @When("^user open stock return page$")
+  public void user_open_stock_return_page() throws Throwable {
+	  StockReturn sr= new StockReturn(dr);
+	  sr.openStockReturn();
+  }
+
+  @Then("^verify stock return page$")
+  public void verify_stock_return_page() throws Throwable {
+	  StockReturn sr= new StockReturn(dr);
+	  sr.verifyPage(schoolname, scenario);
+  }
+  
+//asset opening entry
+  @When("^user open asset opening entry page$")
+  public void user_open_asset_opening_entry_page() throws Throwable {
+	  AssetOpeningEntry aoe= new AssetOpeningEntry(dr);
+	  aoe.openAssetOpeningEntry();
+  }
+
+  @Then("^verify asset opening entry page$")
+  public void verify_asset_opening_entry_page() throws Throwable {
+	  AssetOpeningEntry aoe= new AssetOpeningEntry(dr);
+	  aoe.verifyPage(schoolname, scenario);
+  }
+  
+//opening quantity
+  @When("^user open opening quantity page$")
+  public void user_open_opening_quantity_page() throws Throwable {
+	  OpeningQuantity oq= new OpeningQuantity(dr);
+	  oq.openOpeningQuantity();
+  }
+
+  @Then("^verify opening quantity page$")
+  public void verify_opening_quantity_page() throws Throwable {
+	  OpeningQuantity oq= new OpeningQuantity(dr);
+	  oq.verifyPage(schoolname, scenario);
+  }
+  
+//stock return item wise
+  @When("^user open stock return item wise page$")
+  public void user_open_stock_return_item_wise_page() throws Throwable {
+	  StockReturnItemWise sriw= new StockReturnItemWise(dr);
+	  sriw.openOpeningQuantity();
+  }
+
+  @Then("^verify stock return item wise page$")
+  public void verify_stock_return_item_wise_page() throws Throwable {
+	  StockReturnItemWise sriw= new StockReturnItemWise(dr);
+	  sriw.verifyPage(schoolname, scenario);
+  }
+  
+//multiple stock issue
+  @When("^user open multiple stock issue page$")
+  public void user_open_multiple_stock_issue_page() throws Throwable {
+	  MultipleStockIssue msi= new MultipleStockIssue(dr);
+	  msi.openMultipleStockIssue();
+  }
+
+  @Then("^verify multiple stock issue page$")
+  public void verify_multiple_stock_issue_page() throws Throwable {
+	  MultipleStockIssue msi= new MultipleStockIssue(dr);
+	  msi.verifyPage(schoolname, scenario);
+  }
+
+//stock destroy
+  @When("^user open stock destroy page$")
+  public void user_open_stock_destroy_page() throws Throwable {
+     
+  }
+
+  @Then("^verify stock destroy page$")
+  public void verify_stock_destroy_page() throws Throwable {
+    
+  }
 }
