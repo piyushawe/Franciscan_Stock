@@ -36,7 +36,7 @@ public class MyStepDef {
   Collection<String> tagname;
   String schoolname;
   Collection<String> scenario;
-
+//
   @Before
   public void launchBrowser(Scenario sc)
   {
