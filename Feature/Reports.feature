@@ -3,9 +3,9 @@ Feature: Stock Reports
      So that I can verify that there is no problem in report loading
 
   Background: 
-    Given user enter "http://192.168.10.101:8069/Modules.aspx"
-    When user enter username "admin" and password "admin@123"
-    And passes school name "rosary"
+    Given user enter "http://erp.stkarenssecondaryschool.com"
+    When user enter username "admin" and password "stkss#54321techpass"
+    And passes school name "st karen"
     And click signin
     Then stock home page is opened
 
