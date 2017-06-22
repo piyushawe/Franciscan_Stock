@@ -817,6 +817,30 @@ public class MyStepDef {
 	  dic.verifyPage(schoolname, scenario);
   }
 
+  @When("^enter item category as \"([^\"]*)\" on define item category page$")
+  public void enter_item_category_as_on_define_item_category_page(String arg1) throws Throwable {
+      DefineItemCategory dic= new DefineItemCategory(dr);
+      dic.enterItemCategory(arg1);
+  }
+
+  @When("^enter description as \"([^\"]*)\" on define item category page$")
+  public void enter_description_as_on_define_item_category_page(String arg1) throws Throwable {
+      DefineItemCategory dic= new DefineItemCategory(dr);
+      dic.enterDescription(arg1);
+  }
+
+  @Then("^click save on define item category page$")
+  public void click_save_on_define_item_category_page() throws Throwable {
+      DefineItemCategory dic= new DefineItemCategory(dr);
+      dic.clickSave(schoolname, scenario);
+  }
+
+  @Then("^click view on define item category page$")
+  public void click_view_on_define_item_category_page() throws Throwable {
+      DefineItemCategory dic= new DefineItemCategory(dr);
+      dic.clickView(schoolname, scenario);
+  }
+
 //define unit
   @When("^user open define unit page$")
   public void user_open_define_unit_page() throws Throwable {
@@ -829,7 +853,31 @@ public class MyStepDef {
 	  DefineUnit du= new DefineUnit(dr);
 	  du.verifyPage(schoolname, scenario);
   }
- 
+
+  @When("^enter unit name as \"([^\"]*)\" on define unit page$")
+  public void enter_unit_name_as_on_define_unit_page(String arg1) throws Throwable {
+      DefineUnit du= new DefineUnit(dr);
+      du.enterUnitName(arg1);
+  }
+
+  @When("^enter description as \"([^\"]*)\" on define unit page$")
+  public void enter_description_as_on_define_unit_page(String arg1) throws Throwable {
+      DefineUnit du= new DefineUnit(dr);
+      du.enterShortName(arg1);
+  }
+
+  @Then("^click save on define unit page$")
+  public void click_save_on_define_unit_page() throws Throwable {
+      DefineUnit du= new DefineUnit(dr);
+      du.clickSave(schoolname, scenario);
+  }
+
+  @Then("^click view on define unit page$")
+  public void click_view_on_define_unit_page() throws Throwable {
+      DefineUnit du= new DefineUnit(dr);
+      du.clickView(schoolname, scenario);
+  }
+
 //define items  
   @When("^user open define items page$")
   public void user_open_define_items_page() throws Throwable {
@@ -841,6 +889,66 @@ public class MyStepDef {
   public void verify_define_items_page() throws Throwable {
 	  DefineItems di= new DefineItems(dr);
 	  di.verifyPage(schoolname, scenario);
+  }
+
+  @When("^select item category on define items page$")
+  public void select_item_category_on_define_items_page() throws Throwable {
+      DefineItems di= new DefineItems(dr);
+      di.selectItemCategory();
+  }
+
+  @When("^select sub category on define items page$")
+  public void select_sub_category_on_define_items_page() throws Throwable {
+      DefineItems di= new DefineItems(dr);
+      di.selectSubCategory();
+  }
+
+  @When("^enter item name as \"([^\"]*)\" on define items page$")
+  public void enter_item_name_as_on_define_items_page(String arg1) throws Throwable {
+      DefineItems di= new DefineItems(dr);
+      di.enterItemName(arg1);
+  }
+
+  @When("^enter item code as \"([^\"]*)\" on define items page$")
+  public void enter_item_code_as_on_define_items_page(String arg1) throws Throwable {
+      DefineItems di= new DefineItems(dr);
+      di.enterItemCode(arg1);
+  }
+
+  @When("^select unit on define items page$")
+  public void select_unit_on_define_items_page() throws Throwable {
+      DefineItems di= new DefineItems(dr);
+      di.selectUnit();
+  }
+
+  @When("^select maximum quantity \"([^\"]*)\" on define items page$")
+  public void select_maximum_quantity_on_define_items_page(String arg1) throws Throwable {
+      DefineItems di= new DefineItems(dr);
+      di.enterMaximumQuantity(arg1);
+  }
+
+  @When("^select minimum quantity \"([^\"]*)\" on define items page$")
+  public void select_minimum_quantity_on_define_items_page(String arg1) throws Throwable {
+      DefineItems di= new DefineItems(dr);
+      di.enterMinimumQuantity(arg1);
+  }
+
+  @When("^select is fixed asset on define items page$")
+  public void select_is_fixed_asset_on_define_items_page() throws Throwable {
+      DefineItems di= new DefineItems(dr);
+      di.selectIsFixedAsset();
+  }
+
+  @Then("^click save on define items page$")
+  public void click_save_on_define_items_page() throws Throwable {
+      DefineItems di= new DefineItems(dr);
+      di.clickSave(schoolname, scenario);
+  }
+
+  @Then("^click view on define items page$")
+  public void click_view_on_define_items_page() throws Throwable {
+      DefineItems di= new DefineItems(dr);
+      di.clickView(schoolname, scenario);
   }
 
 //define items sub category
@@ -855,7 +963,37 @@ public class MyStepDef {
 	  DefineItemsSubCategory disc= new DefineItemsSubCategory(dr);
 	  disc.verifyPage(schoolname, scenario);
   }
-  
+
+  @When("^select item category name on define items sub category page$")
+  public void select_item_category_name_on_define_items_sub_category_page() throws Throwable {
+      DefineItemsSubCategory disc= new DefineItemsSubCategory(dr);
+      disc.selectItemCategoryName();
+  }
+
+  @When("^enter item sub category as \"([^\"]*)\" on define items sub category page$")
+  public void enter_item_sub_category_as_on_define_items_sub_category_page(String arg1) throws Throwable {
+      DefineItemsSubCategory disc= new DefineItemsSubCategory(dr);
+      disc.enterItemSubCategory(arg1);
+  }
+
+  @When("^enter description as \"([^\"]*)\" on define items sub category page$")
+  public void enter_description_as_on_define_items_sub_category_page(String arg1) throws Throwable {
+      DefineItemsSubCategory disc= new DefineItemsSubCategory(dr);
+      disc.enterDescription(arg1);
+  }
+
+  @Then("^click save on define items sub category page$")
+  public void click_save_on_define_items_sub_category_page() throws Throwable {
+      DefineItemsSubCategory disc= new DefineItemsSubCategory(dr);
+      disc.clickSave(schoolname, scenario);
+  }
+
+  @Then("^click view on define items sub category page$")
+  public void click_view_on_define_items_sub_category_page() throws Throwable {
+      DefineItemsSubCategory disc= new DefineItemsSubCategory(dr);
+      disc.clickView(schoolname, scenario);
+  }
+
 //define brand name
   @When("^user open define brand name page$")
   public void user_open_define_brand_name_page() throws Throwable {
@@ -868,7 +1006,25 @@ public class MyStepDef {
 	  DefineBrandName dbn= new DefineBrandName(dr);
 	  dbn.verifyPage(schoolname, scenario);
   }
-  
+
+  @When("^enter brand name as \"([^\"]*)\" on define brand name page$")
+  public void enter_brand_name_as_on_define_brand_name_page(String arg1) throws Throwable {
+      DefineBrandName dbn= new DefineBrandName(dr);
+      dbn.enterBrandName(arg1);
+  }
+
+  @Then("^click save on define brand name page$")
+  public void click_save_on_define_brand_name_page() throws Throwable {
+      DefineBrandName dbn= new DefineBrandName(dr);
+      dbn.clickSave(schoolname,scenario);
+  }
+
+  @Then("^click view on define brand name page$")
+  public void click_view_on_define_brand_name_page() throws Throwable {
+      DefineBrandName dbn= new DefineBrandName(dr);
+      dbn.clickView(schoolname, scenario);
+  }
+
 //define academic year
   @When("^user open define academic year page$")
   public void user_open_define_academic_year_page() throws Throwable {
@@ -907,7 +1063,37 @@ public class MyStepDef {
 	  DefineSmsTemplate dst= new DefineSmsTemplate(dr);
 	  dst.verifyPage(schoolname, scenario);
   }
-  
+
+  @When("^select sms type on define sms template page$")
+  public void select_sms_type_on_define_sms_template_page() throws Throwable {
+      DefineSmsTemplate dst= new DefineSmsTemplate(dr);
+      dst.selectSmsType();
+  }
+
+  @When("^enter sms as \"([^\"]*)\" on define sms template page$")
+  public void enter_sms_as_on_define_sms_template_page(String arg1) throws Throwable {
+      DefineSmsTemplate dst= new DefineSmsTemplate(dr);
+      dst.enterSms(arg1);
+  }
+
+  @When("^select is enable on define sms template page$")
+  public void select_is_enable_on_define_sms_template_page() throws Throwable {
+      DefineSmsTemplate dst= new DefineSmsTemplate(dr);
+      dst.selectIsEnable();
+  }
+
+  @Then("^click save on define sms template page$")
+  public void click_save_on_define_sms_template_page() throws Throwable {
+      DefineSmsTemplate dst= new DefineSmsTemplate(dr);
+      dst.clickSave(schoolname, scenario);
+  }
+
+  @Then("^click view on define sms template page$")
+  public void click_view_on_define_sms_template_page() throws Throwable {
+      DefineSmsTemplate dst= new DefineSmsTemplate(dr);
+      dst.clickView(schoolname, scenario);
+  }
+
 //requisition order
   @When("^user open requisition order page$")
   public void user_open_requisition_order_page() throws Throwable {
