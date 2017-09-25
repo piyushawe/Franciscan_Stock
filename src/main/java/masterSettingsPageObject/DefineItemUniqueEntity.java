@@ -26,7 +26,7 @@ public class DefineItemUniqueEntity {
       WebElement menu= dr.findElement(By.xpath("//img[@src='/Images/layout/Master-Settings.png']"));
  	  Actions builder= new Actions(dr);
 	  builder.moveToElement(menu).build().perform();
-	  dr.findElement(By.linkText("Notification Scheduler")).click();
+	  dr.findElement(By.linkText("Define Item Unique Identity")).click();
 	  dr.switchTo().frame(dr.findElement(By.xpath("//iframe[@src='/StockManager/ItemUniqueIdentity.aspx']")));
    }
    public void verifyPage(String schl,Collection<String>sc) throws IOException, InterruptedException

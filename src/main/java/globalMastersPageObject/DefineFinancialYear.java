@@ -27,7 +27,7 @@ public class DefineFinancialYear {
  	  Actions builder= new Actions(dr);
 	  builder.moveToElement(menu).build().perform();
 	  dr.findElement(By.linkText("Define Financial Year")).click();
-	  dr.switchTo().frame(dr.findElement(By.xpath("//iframe[@src='/StockManager/DefineItemSubCategory.aspx']")));
+	  dr.switchTo().frame(dr.findElement(By.xpath("//iframe[@src='/SchoolCommonDetails/FinancialYear.aspx']")));
   }
   public void verifyPage(String schl,Collection<String>sc) throws IOException, InterruptedException
   {

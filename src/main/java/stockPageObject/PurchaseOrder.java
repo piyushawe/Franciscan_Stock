@@ -27,7 +27,7 @@ public class PurchaseOrder {
  	  Actions builder= new Actions(dr);
 	  builder.moveToElement(menu).build().perform();
 	  dr.findElement(By.linkText("Purchase Order")).click();
-	  dr.switchTo().frame(dr.findElement(By.xpath("//iframe[@src='/SchoolCommonDetails/DefineSMSTemplate.aspx']")));
+	  dr.switchTo().frame(dr.findElement(By.xpath("//iframe[@src='/StockManager/PurchaseOrder.aspx']")));
   }
   public void verifyPage(String schl,Collection<String>sc) throws IOException, InterruptedException
   {

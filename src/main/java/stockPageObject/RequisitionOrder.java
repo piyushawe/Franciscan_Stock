@@ -27,7 +27,7 @@ public class RequisitionOrder {
  	  Actions builder= new Actions(dr);
 	  builder.moveToElement(menu).build().perform();
 	  dr.findElement(By.linkText("Requisition Order")).click();
-	  dr.switchTo().frame(dr.findElement(By.xpath("//iframe[@src='/SchoolCommonDetails/DefineSMSTemplate.aspx']")));
+	  dr.switchTo().frame(dr.findElement(By.xpath("//iframe[@src='/StockManager/RequisitionForm.aspx']")));
   }
   public void verifyPage(String schl,Collection<String>sc) throws IOException, InterruptedException
   {

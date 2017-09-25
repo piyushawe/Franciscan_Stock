@@ -26,8 +26,8 @@ public class PurchaseReturnEntry {
 	  WebElement menu= dr.findElement(By.xpath("//img[@src='/Images/layout/Stock.png']"));
  	  Actions builder= new Actions(dr);
 	  builder.moveToElement(menu).build().perform();
-	  dr.findElement(By.linkText("Stock Bill Entry")).click();
-	  dr.switchTo().frame(dr.findElement(By.xpath("//iframe[@src='/StockManager/DefineBillentry.aspx']")));
+	  dr.findElement(By.linkText("Purchase Return Entry")).click();
+	  dr.switchTo().frame(dr.findElement(By.xpath("//iframe[@src='/StockManager/PurchaseReturnEntry.aspx']")));
   }
   public void verifyPage(String schl,Collection<String>sc) throws IOException, InterruptedException
   {

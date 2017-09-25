@@ -27,7 +27,7 @@ public class OpeningQuantity {
  	  Actions builder= new Actions(dr);
 	  builder.moveToElement(menu).build().perform();
 	  dr.findElement(By.linkText("Opening Qty")).click();
-	  dr.switchTo().frame(dr.findElement(By.xpath("//iframe[@src='/StockManager/AssetOpeningQty.aspx']")));
+	  dr.switchTo().frame(dr.findElement(By.xpath("//iframe[@src='/StockManager/StockOpeningQty.aspx']")));
   }
   public void verifyPage(String schl,Collection<String>sc) throws IOException, InterruptedException
   {

@@ -2,10 +2,10 @@ Feature: Franciscan Stock
       As a user I would like to verify that 
       The page is loaded successfully
 
-  Background: 
-    Given user enter "http://erp.stkarenssecondaryschool.com"
-    When user enter username "admin" and password "stkss#54321techpass"
-    And passes school name "st karen"
+  Background:
+    Given user enter "http://erptraining.franciscanecare.net/Secure/"
+    When user enter username "admin" and password "fspl@12345"
+    And passes school name "erptraining"
     And click signin
     Then stock home page is opened
 

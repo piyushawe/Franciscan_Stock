@@ -27,7 +27,7 @@ public class StockMasterSetting {
  	  Actions builder= new Actions(dr);
 	  builder.moveToElement(menu).build().perform();
 	  dr.findElement(By.linkText("Stock Master Setting")).click();
-	  dr.switchTo().frame(dr.findElement(By.xpath("//iframe[@src='/StockManager/NotificationScheduler.aspx']")));
+	  dr.switchTo().frame(dr.findElement(By.xpath("//iframe[@src='/StockManager/StockSettings.aspx']")));
    }
    public void verifyPage(String schl,Collection<String>sc) throws IOException, InterruptedException
    {
