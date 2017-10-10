@@ -3,9 +3,9 @@ Feature: Stock Reports
      So that I can verify that there is no problem in report loading
 
   Background: 
-    Given user enter "http://erptraining.franciscanecare.net/Secure/"
-    When user enter username "admin" and password "fspl@12345"
-    And passes school name "erptraining"
+    Given user enter "http://qaerp.franciscanecare.net"
+    When user enter username "admin" and password "Admin#franciscan"
+    And passes school name "qaerp1"
     And click signin
     Then stock home page is opened
 

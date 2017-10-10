@@ -45,7 +45,7 @@
     <version>1.2.5</version>
 </dependency>
 
-  <dependency>
+      <dependency>
           <groupId>org.seleniumhq.selenium</groupId>
           <artifactId>selenium-api</artifactId>
           <version>3.6.0</version>
@@ -83,6 +83,7 @@
                         <reuseForks>true</reuseForks>
                         <includes>
                             <include>**/VerifyPageRunner.class</include>
+                            <!--<include>**/ReportsRunner.class</include>-->
                         </includes>
                     </configuration>
                 </plugin>

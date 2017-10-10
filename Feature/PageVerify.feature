@@ -3,9 +3,9 @@ Feature: Franciscan Stock
       The page is loaded successfully
 
   Background:
-    Given user enter "http://erptraining.franciscanecare.net/Secure/"
-    When user enter username "admin" and password "fspl@12345"
-    And passes school name "erptraining"
+    Given user enter "http://qaerp.franciscanecare.net"
+    When user enter username "admin" and password "Admin#franciscan"
+    And passes school name "qaerp1"
     And click signin
     Then stock home page is opened
 
